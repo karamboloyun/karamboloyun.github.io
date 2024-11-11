@@ -4,29 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #2c3e50, #3498db);
+            background: linear-gradient(-45deg, #2c3e50, #3498db, #2980b9, #34495e);
+            background-size: 400% 400%;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
             text-align: center;
+            animation: gradient 10s ease infinite;
         }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
             max-width: 600px;
             padding: 20px;
+            animation: fadeIn 2s ease-in;
         }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            animation: slideIn 2s ease-out;
         }
+
         p {
             font-size: 1.2rem;
+            animation: fadeInText 3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .btn-instagram {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #e4405f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-instagram:hover {
+            background-color: #c13584;
+            color: #fff;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -36,6 +87,14 @@
         <p>Hizmetimizi size sunabilmek için çalışıyoruz...</p>
         <br>
         <p>KarambolOyun</p>
+
+        <!-- Instagram Button -->
+        <a href="https://www.instagram.com/karamboloyun" class="btn-instagram" target="_blank">Instagram Sayfamıza Git</a>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
